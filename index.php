@@ -9,6 +9,8 @@ if($_SERVER['HTTP_HOST'] == '182.71.240.210'){ // CHANGE THIS IP ACCORDINGLY
  	die();
  }
 
+ //Paulami
+
 /**
  * CodeIgniter
  *
