@@ -45,11 +45,11 @@ class Login extends MY_Controller {
         // Setting Form Validation Rules
         $this->form_validation->set_rules('usrnm', 'Username', 'required');
         $this->form_validation->set_rules('pwd', 'Password', 'required');
-        $this->form_validation->set_rules('captcha', 'CAPTCHA Code', 'required');
+       // $this->form_validation->set_rules('captcha', 'CAPTCHA Code', 'required');
         // Checking If Form Validation Successful
         if ($this->form_validation->run()) {
             // Checking The CAPTCHA Value
-            if($this->session->userdata("captchaword") == $this->input->post("captcha")) {
+           // if($this->session->userdata("captchaword") == $this->input->post("captcha")) {
                 // Getting User's Data
                 $usrnm = filterData('usrnm');
                 $pwd = $this->input->post('pwd');
@@ -68,50 +68,18 @@ class Login extends MY_Controller {
                     $enc_pwd = 0;
                 }*/
                 // Login Procedure
-                $query = "BEGIN REPORTER.PKG_OFFICERS.officers_login('$mob','$md5pass','$pass',:rc_out); end;";
-                $validate = $this->{$this->model}->getRefCursor($query);
+                /*$query = "BEGIN REPORTER.PKG_OFFICERS.officers_login('$mob','$md5pass','$pass',:rc_out); end;";
+                $validate = $this->{$this->model}->getRefCursor($query);*/
                 //echo "<pre>"; print_r($validate) ; die ; 
                 // If Login Function Returns No Value Against User's Credential
-                if (empty($validate)){
-                    $action = 'Login Attempt Failed by '.$usrnm;
-                    $this->{$this->model}->logEntry($action);
-                    $data['loginmsg'] = 'Wrong Credentials!';
-                    $flag = "new";
-                    $data['image'] = $this->{$this->model}->ciCaptcha($flag);
-                    $this->load->view('login', $data);
-                } else { // Login Done and Redirecting to Dashboard
-                    $usrdata = array(
-                        'USRNAME'   => $validate[0]['OF_NAME'],
-                        'USRTYPE'   => $validate[0]['OFID'],
-                        'OFID'   => $validate[0]['OFID'],
-                        'OF_NAME'   => $validate[0]['OF_NAME'],
-                        'OF_PHN1' => $validate[0]['OF_PHN1'],
-                        'OF_PHN2'  => $validate[0]['OF_PHN2'],
-                        'OF_RANK_ID'  => $validate[0]['OF_RANK_ID'],
-                        'OF_ATTCH_PSID'  => $validate[0]['OF_ATTCH_PSID'],
-                        'OF_ATTCH_DIVID'  => $validate[0]['OF_ATTCH_DIVID'],
-                        'IS_DO'  => $validate[0]['IS_DO'],
-                        'IS_OC'  => $validate[0]['IS_OC'],
-                        'IS_AC'  => $validate[0]['IS_AC'],
-                        'IS_DC'  => $validate[0]['IS_DC'],
-                        'IS_JTCP'  => $validate[0]['IS_JTCP'],
-                        'IS_ADCP'  => $validate[0]['IS_ADCP'],
-                        'SUBORDINATES'  => $validate[0]['SUBORDINATES']
-
-                    );
-                    $this->session->set_userdata($usrdata);
+                // Login Done and Redirecting to Dashboard
+                    
+                    //$this->session->set_userdata($usrdata);
                     $action = 'Login Done by '.$validate[0]['OF_NAME'];
                     $this->{$this->model}->logEntry($action);
-                    redirect('Dashboard');
-                }
-            } else { // If CAPTCHA Mismatch
-                $action = 'Wrong CAPTCHA Code Entered by '.$usrnm;
-                $this->{$this->model}->logEntry($action);
-                $data['loginmsg'] = 'Wrong Captcha!';
-                $flag = "new";
-                $data['image'] = $this->{$this->model}->ciCaptcha($flag);
-                $this->load->view('login', $data);
-            }
+                    redirect('Report/Advrepg');
+                
+          
             // If Form Validation Errors
         } else {
             $data['loginmsg'] = 'Mandatory field missing!';

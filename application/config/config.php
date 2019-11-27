@@ -28,7 +28,7 @@ if(LIVE) {
     $config['upload_path'] = '/var/www/html/uploads/SBReporter/';
     $config['view_path'] = "https://uploads.kolkatapolice.org/SBReporter/";
 } else {
-    $config['base_url']	= "http" . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "s" : "") . "://" . ((isset($_SERVER["HTTP_HOST"]))?$_SERVER["HTTP_HOST"]:'') . "/SBReporter/";
+    $config['base_url']	= "http" . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "s" : "") . "://" . ((isset($_SERVER["HTTP_HOST"]))?$_SERVER["HTTP_HOST"]:'') . "/KPtenant/";
     $config['upload_path'] = '/var/www/html/uploads/SBReporter/';
     // $config['view_path'] = "https://uploads.kolkatapolice.org/SBReporter/";
     $config['view_path'] = "http://localhost/uploads/SBReporter/";

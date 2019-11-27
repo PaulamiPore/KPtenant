@@ -124,7 +124,7 @@ public function Advrepg(){
 
 
 
-        if($posted_data['RP_MODE']=='WFR')
+        /*if($posted_data['RP_MODE']=='WFR')
     {      
         $data['title'] = 'Advance Full Report Generation';
         $action = "Advance Report Generation page opened";
@@ -133,10 +133,11 @@ public function Advrepg(){
         $query2 = "BEGIN REPORTER.PKG_OFFICERS.officers_oc(:rc_out); end;";
         $data['offcr_name'] = $this->{$this->model}->getRefCursor($query2);
           /*pre( $data['offcr_name'],1) ;*/
+        $action = "Advance Report Generation page opened";
         $this->{$this->model}->logEntry($action);
-        $data['prog_type']= $prog_type;
+        /*$data['prog_type']= $prog_type;*/
 
-        $query3 = "BEGIN REPORTER.PKG_OFFICERS.officers_do(:rc_out); end;";
+/*        $query3 = "BEGIN REPORTER.PKG_OFFICERS.officers_do(:rc_out); end;";
         $data['do_name'] = $this->{$this->model}->getRefCursor($query3);
 
         $query4 = "BEGIN REPORTER.PKG_OFFICERS.officers_ac(:rc_out); end;";
@@ -145,36 +146,10 @@ public function Advrepg(){
         $query5 = "BEGIN REPORTER.PKG_OFFICERS.officers_dc(:rc_out); end;";
         $data['dc_name'] = $this->{$this->model}->getRefCursor($query5);
         $data['RP_PRIORITY'] = $posted_data['RP_PRIORITY'] ; 
-        $data['RP_MODE'] = $posted_data['RP_MODE'] ; 
-        $data['subview'] = $this->load->view('advpg2', $data, true);
-      }
+        $data['RP_MODE'] = $posted_data['RP_MODE'] ;
+*/        $data['subview'] = $this->load->view('advpg2', $data, true);
+      //}
 
-      else{
-
-        $data['title'] = 'Advance Report Upload';
-        $action = "Advance Report Upload page opened";
-        $query = "BEGIN REPORTER.PKG_OFFICERS.get_events(:rc_out); end;";
-        $prog_type = $this->{$this->model}->getRefCursor($query);
-        $query2 = "BEGIN REPORTER.PKG_OFFICERS.officers_oc(:rc_out); end;";
-        $data['offcr_name'] = $this->{$this->model}->getRefCursor($query2);
-          /*pre( $data['offcr_name'],1) ;*/
-        $this->{$this->model}->logEntry($action);
-        $data['prog_type']= $prog_type;
-
-        $query3 = "BEGIN REPORTER.PKG_OFFICERS.officers_do(:rc_out); end;";
-        $data['do_name'] = $this->{$this->model}->getRefCursor($query3);
-
-        $query4 = "BEGIN REPORTER.PKG_OFFICERS.officers_ac(:rc_out); end;";
-        $data['ac_name'] = $this->{$this->model}->getRefCursor($query4);
-
-        $query5 = "BEGIN REPORTER.PKG_OFFICERS.officers_dc(:rc_out); end;";
-        $data['dc_name'] = $this->{$this->model}->getRefCursor($query5);
-        $data['RP_PRIORITY'] = $posted_data['RP_PRIORITY'] ; 
-        $data['RP_MODE'] = $posted_data['RP_MODE'] ; 
-        $data['subview'] = $this->load->view('advpg3', $data, true);
-
-
-      }
 
 
         $this->load->view('layout_main', $data);

@@ -57,7 +57,7 @@
                                             <span><img src="<?php echo base_url(); ?>assets/images/kplogo.png" alt="KP Logo" class="m-t-120 kpimg" height="200"></span>
                                         </a>
                                     </h2>
-                                    <h1 class="text-uppercase loginTxt anton zoomIn">Special Branch Reporting System</h1>
+                                    <h1 class="text-uppercase loginTxt anton zoomIn">Special Branch Tenant Management System</h1>
                                     <h3 class="text-dark"><span class="cookie"><em>An Kolkata Police Special Branch initiative</em></span></h3>
                                 </div>
                             </div>
@@ -91,18 +91,8 @@
                                             </div>
                                             <label class="text-orange"><?php echo form_error('pwd'); ?></label>
                                         </div>
-                                        <div class="form-group text-center">
-                                            <div class="col-xs-12">
-                                                <span id="captchaImg"><?php echo $image; // this will show the captcha image ?></span>
-                                                <a class="btn btn-sm btn-icon waves-effect waves-light btn-pink" data-toggle="tooltip" data-placement="top" title data-original-title="Reload CAPTCHA" id="reloadBtn"><i class="fa fa-refresh"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <label class="text-dark">CAPTCHA Code</label>
-                                                <input class="form-control" type="text" required="required" placeholder="Enter CAPTCHA" autocomplete="off" name="captcha" maxlength="4">
-                                            </div>
-                                        </div>
+                                        
+                                       
                                         <div class="form-group account-btn text-center m-t-10">
                                             <div class="col-xs-12">
                                                 <button class="btn w-md btn-bordered btn-custom waves-effect waves-light" type="submit">Log In</button>
