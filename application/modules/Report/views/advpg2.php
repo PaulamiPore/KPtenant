@@ -14,9 +14,9 @@
              <?php
                             echo form_open(base_url('Report/Advrepi'));
                         ?>
-
+<!-- 
                   <input type="hidden" name="RP_PRIORITY" value="<?php echo $RP_PRIORITY ; ?>"> 
-                  <input type="hidden" name="RP_MODE" value="<?php echo $RP_MODE ; ?>"> 
+                  <input type="hidden" name="RP_MODE" value="<?php echo $RP_MODE ; ?>">  -->
                  	    
 		<div class="row">
 			<div class="col-md-6 m-t-50">
@@ -30,11 +30,7 @@
 	                                               <!--  <div class="col-md-10"> -->
 	                                                       <select class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" id="EVID" name="EVID" required>
                                            <option selected="true" disabled="disabled" value="">Select Event Type</option> 
-                                           <?php /*pre($prog_type,1) ;*/ foreach ($prog_type as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['EVID'];?>"><?php echo $value['EVENT_NAME'];?></option>
-                                            
-                                           <?php  } ?>                                       
+                                          s                                      
                              				</select>
 
 
@@ -118,11 +114,7 @@
 	                                                                                           
 	                                     <select class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" required name="OFID" >
                                            <option selected="true" disabled="disabled" value="">Select Concerned OCs Name</option> 
-                                           <?php  foreach ($offcr_name as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['OFID'];?>"><?php echo $value['OF_NAME']."(".$value['DESIG_NAME'].") - ".$value['PS_NAME']?></option>
-                                            
-                                           <?php  } ?>                                       
+                                                                      
                              				</select>	                                                
 	                                            </div>
 	                                            <br><br>
@@ -131,11 +123,7 @@
 	                                                                                           
 	                                     <select class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" required multiple="multiple" name="OTHR_OFIDS[]">
                                            <option selected="true" disabled="disabled" value="" >Select DOs Name</option> 
-                                           <?php  foreach ($do_name as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['OFID'];?>"><?php echo $value['OF_NAME']."(".$value['DESIG_NAME'].") - ".$value['PS_NAME']?></option>
-                                            
-                                           <?php  } ?>                                       
+                                                                             
                              				</select> 	                                                
 	                                            </div>
 	                                             <br><br>
@@ -144,11 +132,7 @@
 	                                                                                           
 	                                     <select class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" required multiple="multiple" name="OTHR_OFIDS[]">
                                            <option selected="true" disabled="disabled" value="" >Select OCs Name</option> 
-                                           <?php  foreach ($offcr_name as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['OFID'];?>"><?php echo $value['OF_NAME']."(".$value['DESIG_NAME'].") - ".$value['PS_NAME']?></option>
-                                            
-                                           <?php  } ?>                                       
+                                                                    
                              				</select> 	                                                
 	                                            </div> 
 	                                            <br><br>
@@ -157,11 +141,7 @@
 	                                                                                           
 	                                     <select id="dolist"class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" required multiple="multiple" name="OTHR_OFIDS[]">
                                            <option selected="true" disabled="disabled" value="" >Select ACs Name</option> 
-                                           <?php  foreach ($ac_name as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['OFID'];?>"><?php echo $value['OF_NAME']."(".$value['DESIG_NAME'].") - ".$value['DIV_NAME']?></option>
-                                            
-                                           <?php  } ?>                                       
+                                                                            
                              				</select> 	                                                
 	                                            </div> 
 	                                            <br><br>
@@ -171,11 +151,7 @@
 	                                     <select id="dolist"class="col-md-10 selectpicker" data-live-search="true" data-style="btn-teal" tabindex="-98" required multiple="multiple" name="OTHR_OFIDS[]">
                                            <option selected="true" disabled="disabled" value="" >Select DCs Name</option> 
                                            
-                                             <?php  foreach ($dc_name as $key => $value) {
-	                                                	# code...?>    
-                                            <option value="<?php echo $value['OFID'];?>"><?php echo $value['OF_NAME']."(".$value['DESIG_NAME'].")"?></option>
-                                            
-                                           <?php  } ?>                                        
+                                                                                   
                              				</select> 	                                                
 	                                            </div> 
 
