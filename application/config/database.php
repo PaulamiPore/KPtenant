@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-    'hostname' => (LIVE)?'182.71.240.222':'182.71.240.222',
-    'username' => (LIVE)?'REPORTER':'REPORTER',
-    'password' => (LIVE)?'system':'system',
-    'database' => (LIVE)?'kpd':'kpd',
-	'dbdriver' => 'oci8',
+    'hostname' => (LIVE)?'182.71.240.222':'localhost',
+    'username' => (LIVE)?'REPORTER':'sbdev',
+    'password' => (LIVE)?'system':'P@ssw0rd123',
+    'database' => (LIVE)?'kpd':'kp_tenant',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => FALSE,//(ENVIRONMENT !== 'production'),
